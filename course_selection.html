@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI School</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f8fb;
+        }
+        header {
+            background-color: #eef4fc;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3477db;
+        }
+        header nav a {
+            margin-left: 20px;
+            color: #000;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+        }
+        .left-section {
+            background-color: #e9f2fd;
+            padding: 50px;
+            border-radius: 10px;
+            width: 50%;
+        }
+        .left-section h2 {
+            font-size: 18px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .left-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .left-section p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .right-section {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-section h3 {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+        .right-section label {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .right-section select, .right-section input[type="text"], .right-section input[type="email"], .right-section input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .right-section button {
+            background-color: #3477db;
+            color: #fff;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .right-section .btn-back {
+            background-color: #cccccc;
+            color: #000;
+            margin-right: 10px;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .program {
+            background-color: #e9f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .program h4 {
+            margin: 0 0 10px 0;
+        }
+        .program p {
+            margin: 0 0 10px 0;
+        }
+        .program button {
+            background-color: #3477db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .other-programs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .other-program {
+            background-color: #e9f2fd;
+            width: 30%;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .other-program h4 {
+            margin: 0 0 10px 0;
+        }
+        .other-program p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AISchool</div>
+        <nav>
+            <a href="#">Browse Courses</a>
+            <a href="#">Discover your path</a>
+            <a href="#">Resources</a>
+            <a href="#">Register for webinar</a>
+        </nav>
+    </header>
+    <main>
+        <div class="left-section">
+            <h2>Unsure of what to pick?</h2>
+            <h1>Find the program for you.</h1>
+            <p>AI-proof your career with our end-to-end AI courses, curated by the best of the best.</p>
+        </div>
+        <div class="right-section">
+            <!-- Step 1 -->
+            <div class="step active" id="step-1">
+                <h3>Question #1</h3>
+                <label for="role">What's your current role?</label>
+                <select id="role" name="role">
+                    <option value="AWS Cloud Solutions Architect">AWS Cloud Solutions Architect</option>
+                    <option value="Backend Engineering">Backend Engineering</option>
+                    <option value="Data Analyst & Business Analyst">Data Analyst & Business Analyst</option>
+                    <option value="Data Engineering">Data Engineering</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Embedded Systems">Embedded Systems</option>
+                    <option value="Engineering Manager">Engineering Manager</option>
+                    <option value="Frontend Engineering">Frontend Engineering</option>
+                    <option value="Fullstack Engineering">Fullstack Engineering</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="Mobile Engineering (iOS/Android)">Mobile Engineering (iOS/Android)</option>
+                    <option value="Product Manager (Tech)">Product Manager (Tech)</option>
+                    <option value="Security Engineering">Security Engineering</option>
+                    <option value="Site Reliability Engineering">Site Reliability Engineering</option>
+                    <option value="Technical Program Manager">Technical Program Manager</option>
+                    <option value="Test Engineering">Test Engineering</option>
+                </select>
+                <button type="button" onclick="nextStep(2)">Next</button>
+            </div>
+            <!-- Step 2 -->
+            <div class="step" id="step-2">
+                <h3>Question #2</h3>
+                <label for="experience">How many years of experience do you have?</label>
+                <select id="experience" name="experience">
+                    <option value="0-5 years">0 to 5 years</option>
+                    <option value="5-10 years">5 to 10 years</option>
+                    <option value="10+ years">10+ years</option>
+                </select>
+                <div>
+                    <button type="button" class="btn-back" onclick="prevStep(1)">Back</button>
+                    <button type="button" onclick="nextStep(3)">Next</button>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="step" id="step-3">
+                <h3>Question #3</h3>
+                <label for="future-goal">What do you want your career to look like in the upcoming future?</label>
+                <select id="future-goal" name="future-goal">
+                    <option value="3a">3a - Do you see yourself working in core ML teams, building ML infrastructures, training models and in a typical engineering heavy role?</option>
+                    <option value="3b">3b - Are you looking for a comprehensive course that covers both classical machine learning techniques and modern deep learning, including practical applications and hands-on projects?</option>
+                    <option value="3c">3c - Are you interested in diving deep into advanced generative AI techniques, including neural network architectures, LLMs, diffusion models, and their applications in production?</option>
+                    <option value="3d">3d - Are you interested in applying AI techniques and tools to solve problems in your current domain, such as business, healthcare, finance, etc.?</option>
+                    <option value="3e">3e - Are you looking to integrate GenAI and ML techniques into your current domain to enhance your skills and become AI enabled along with a solid interview prep in your primary role?</option>
+                    <option value="3f">3f - Are you looking to transition into AI/ML roles with a focus on data analysis and machine learning, but not in a heavy coding capacity?</option>
+                </select>
+                <div>
+                    <button type="button" class="btn-back" onclick="prevStep(2)">Back</button>
+                    <button type="button" onclick="nextStep(4)">Next</button>
+                </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="step" id="step-4">
+                <h3>Question #4</h3>
+                <label for="duration">Course Duration</label>
+                <select id="duration" name="duration">
+                    <option value="3-6 months">3-6 months</option>
+                    <option value="6-9 months">6-9 months</option>
+                    <option value="12 months">12 months</option>
+                </select>
+                <div>
+                    <button type="button" class="btn-back" onclick="prevStep(3)">Back</button>
+                    <button type="button" onclick="nextStep(5)">Next</button>
+                </div>
+            </div>
+            <!-- Step 5 -->
+            <div class="step" id="step-5">
+                <h3>Almost there...</h3>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="abc@xyz.com">
+                <label for="number">Number</label>
+                <input type="number" id="number" name="number" placeholder="0000000000">
+                <div>
+                    <button type="button" class="btn-back" onclick="prevStep(4)">Back</button>
+                    <button type="button" onclick="submitForm()">Submit</button>
+                </div>
+            </div>
+            <!-- Step 6 -->
+            <div class="step" id="step-6">
+                <h2>Best Suited</h2>
+                <h3>Here's what we suggest.</h3>
+                <p id="course-recommendation">Here are the best suited programs based on your responses.</p>
+                <div id="recommended-courses"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const courses = {
+            "EdgeUp": {
+                description: "Interview Kickstart’s EdgeUp Program is a unique course designed to equip you with Generative AI skills relevant to your domain and job role AND prepare you for interviews at top tech companies. You will not only gain the skills required to stay relevant in today’s AI-drien techworld, but also be ready to ace interviews to land your dream job.",
+                link: "https://www.interviewkickstart.com/courses/edgeup"
+            },
+            "ML SwitchUp": {
+                description: "Unlock your potential with our ML SwitchUp course, tailored for professionals eager to transition into Applied ML/ML engineering roles. Whether you're great coder or someone with a passion for machine learning, this comprehensive curriculum covers everything from foundational python and data structures to advanced ML algorithms and architectures like Transformers and LLMs paired with MLOps and Deployments on AWS Servers. Gain practical experience through hands-on assignments, guided by industry experts and academic leaders. Complete your journey with a unique FAANG-mentored capstone project, readying you to implement ML-backed solutions and excel in your new career as an ML Engineer.",
+                link: "https://www.interviewkickstart.com/courses/machine-learning-course"
+            },
+            "ML Flagship Course": {
+                description: "Interview Kickstart’s ML Program will equip you with ML skills and prepare you for interviews at top tech companies. You will not only learn the essentials of classical ML, Generative AI, and LLMs but also be ready to ace interviews to land your dream ML job.",
+                link: "https://www.interviewkickstart.com/courses/flagship-machine-learning-course"
+            },
+            "Advanced Gen AI": {
+                description: "The Advanced Generative AI course has been developed collaboratively with FAANG+ instructors who work on cutting-edge Generative AI technology in their respective organizations. This direct involvement enriches the curriculum and benefits participants to access real-world applications of concepts, case studies, and best practices. The course begins with building a solid foundation for Generative AI through comprehensive sessions on Deep Learning Primers and Neural Architectures.",
+                link: "https://www.interviewkickstart.com/courses/advanced-genai-program"
+            },
+            "Applied Gen AI": {
+                description: "Applied GenAI is designed to cut through the complexity and open the door to the world of AI for a broader audience. It’s for those who seek to understand and apply generative AI principles without becoming ML experts. By focusing on the practical application, key concepts, and strategic understanding necessary for leveraging AI in various domains, this course empowers learners to innovate and make informed decisions in the age of AI.",
+                link: "https://www.interviewkickstart.com/courses/applied-genai"
+            },
+            "DS SwitchUp": {
+                description: "The DS SwitchUp program is perfect for professionals from non-technical fields, STEM graduates aiming to become data scientists. It covers essential Python and SQL skills, advanced data structures, algorithms, and machine learning techniques. With hands-on assignments, diverse expert instructors, and a FAANG-mentored capstone project, you'll gain practical experience and transition seamlessly into data science roles.",
+                link: "https://www.interviewkickstart.com/courses/data-science-course"
+            }
+        };
+
+        function nextStep(step) {
+            document.querySelectorAll('.step').forEach(function (element) {
+                element.classList.remove('active');
+            });
+            document.getElementById('step-' + step).classList.add('active');
+        }
+
+        function prevStep(step) {
+            document.querySelectorAll('.step').forEach(function (element) {
+                element.classList.remove('active');
+            });
+            document.getElementById('step-' + step).classList.add('active');
+        }
+
+        function submitForm() {
+            const role = document.getElementById('role').value;
+            const experience = document.getElementById('experience').value;
+            const futureGoal = document.getElementById('future-goal').value;
+            const duration = document.getElementById('duration').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const number = document.getElementById('number').value;
+
+            const recommendation = determineCourse(role, experience, duration, futureGoal);
+            displayRecommendation(recommendation);
+            nextStep(6);
+        }
+
+        function determineCourse(role, experience, duration, futureGoal) {
+            // Defining courses
+            const ml_courses = ["EdgeUp", "ML Flagship Course", "DS SwitchUp", "ML SwitchUp"];
+            const genai_courses = ["Advanced Gen AI", "Applied Gen AI"];
+
+            // Mapping for ML courses based on future_goal
+            const ml_mapping = {
+                "3a": ml_courses,
+                "3b": ml_courses,
+                "3e": ["EdgeUp"],
+                "3f": ["EdgeUp", "ML Flagship Course", "DS SwitchUp"]
+            };
+
+            // Mapping for GenAI courses based on future_goal
+            const genai_mapping = {
+                "3c": ["Applied Gen AI"],
+                "3d": ["Applied Gen AI"]
+            };
+
+            // Define role-specific logic
+            if (["Technical Program Manager", "Product Manager (Tech)", "Engineering Manager"].includes(role)) {
+                if (ml_mapping[futureGoal]) {
+                    if (duration === "3-6 months") {
+                        if (["0-5 years", "5-10 years", "10+ years"].includes(experience)) {
+                            return ml_mapping[futureGoal][0];
+                        }
+                    } else if (duration === "6-9 months") {
+                        if (["0-5 years", "5-10 years"].includes(experience)) {
+                            return ml_mapping[futureGoal][1];
+                        } else if (experience === "10+ years") {
+                            return ml_mapping[futureGoal][0];
+                        }
+                    } else if (duration === "12 months") {
+                        if (["0-5 years", "5-10 years"].includes(experience)) {
+                            return ml_mapping[futureGoal][1];
+                        } else if (experience === "10+ years") {
+                            return ml_mapping[futureGoal][2];
+                        }
+                    }
+                } else if (genai_mapping[futureGoal]) {
+                    if (duration === "12 months" && experience === "5-10 years") {
+                        return "EdgeUp";
+                    }
+                    return genai_mapping[futureGoal][0];
+                }
+            }
+
+            // Additional role-specific logic for other roles
+            if (["Backend Engineering", "Fullstack Engineering", "Frontend Engineering", "Data Engineering", "Data Analyst & Business Analyst", "Test Engineering", "Mobile Engineering (iOS/Android)", "Embedded Systems", "Data Science", "Machine Learning", "Site Reliability Engineering", "Security Engineering", "AWS Cloud Solutions Architect"].includes(role)) {
+                if (ml_mapping[futureGoal]) {
+                    if (duration === "3-6 months") {
+                        if (["0-5 years", "5-10 years", "10+ years"].includes(experience)) {
+                            return ml_mapping[futureGoal][0];
+                        }
+                    } else if (duration === "6-9 months") {
+                        if (["0-5 years", "5-10 years", "10+ years"].includes(experience)) {
+                            return ml_mapping[futureGoal][1];
+                        }
+                    } else if (duration === "12 months") {
+                        if (["0-5 years", "5-10 years", "10+ years"].includes(experience)) {
+                            return ml_mapping[futureGoal][2];
+                        }
+                    }
+                } else if (genai_mapping[futureGoal]) {
+                    return genai_mapping[futureGoal][0];
+                }
+            }
+
+            // Default recommendation for miscellaneous roles or unhandled cases
+            return "Applied Gen AI";
+        }
+
+        function displayRecommendation(course) {
+            const recommendedCoursesDiv = document.getElementById('recommended-courses');
+            recommendedCoursesDiv.innerHTML = '';
+
+            const courseDetails = courses[course];
+            if (courseDetails) {
+                const courseElement = document.createElement('div');
+                courseElement.classList.add('program');
+                courseElement.innerHTML = `
+                    <h4>${course}</h4>
+                    <p>${courseDetails.description}</p>
+                    <button onclick="window.open('${courseDetails.link}', '_blank')">View Course</button>
+                `;
+                recommendedCoursesDiv.appendChild(courseElement);
+            }
+        }
+    </script>
+</body>
+</html>
