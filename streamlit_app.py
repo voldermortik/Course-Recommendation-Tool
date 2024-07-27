@@ -11,7 +11,7 @@ html_string = load_html('course_selection.html')  # Replace 'course_selection.ht
 
 # Embed HTML content in Streamlit app with dynamic height and width
 html_code = f"""
-<div style="justify-content: center; align-items: center; min-height: 100vh; width: 100%;">
+<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%;">
     <div style="width: 100%; max-width: 1200px;">
         {html_string}
     </div>
