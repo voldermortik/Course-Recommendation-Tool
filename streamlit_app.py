@@ -7,7 +7,7 @@ def load_html(file_path):
         return file.read()
 
 # Load HTML content
-html_string = load_html('https://github.com/voldermortik/Course-Recommendation-Tool/blob/main/course_selection.html')  
+html_string = load_html('course_selection.html')  
 # Replace 'index.html' with the path to your HTML file
 
 # Embed HTML content in Streamlit app
