@@ -7,8 +7,15 @@ def load_html(file_path):
         return file.read()
 
 # Load HTML content
-html_string = load_html('course_selection.html')  
-# Replace 'course_selection.html' with the path to your HTML file
+html_string = load_html('course_selection.html')  # Replace 'course_selection.html' with the path to your HTML file
 
-# Embed HTML content in Streamlit app with dynamic height
-components.html(html_string, height=1000, width=1200, scrolling=True)
+# Embed HTML content in Streamlit app with dynamic height and width
+html_code = f"""
+<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%;">
+    <div style="width: 100%; max-width: 1200px;">
+        {html_string}
+    </div>
+</div>
+"""
+
+components.html(html_code, height=1000, scrolling=True)
