@@ -11,4 +11,4 @@ html_string = load_html('course_selection.html')
 # Replace 'index.html' with the path to your HTML file
 
 # Embed HTML content in Streamlit app
-components.html(html_string, height=800, scrolling=True)
+components.html(html_string, height=1000, width=800, scrolling=True)
