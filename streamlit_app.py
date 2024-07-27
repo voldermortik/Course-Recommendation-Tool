@@ -18,4 +18,4 @@ html_code = f"""
 </div>
 """
 
-components.html(html_code, height=1000, scrolling=True)
+components.html(html_code, height=1000, width=800,scrolling=True)
